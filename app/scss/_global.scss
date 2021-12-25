@@ -1,0 +1,144 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #010101;
+    background-color: #fff;
+}
+
+body._lock {
+    overflow: hidden;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: $container + px;
+
+    &--lg {
+        max-width: $max-container + px;
+    }
+}
+
+.logo {
+    width: 120px;
+    height: 30px;
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(0 0 0 0);
+    overflow: hidden;
+    border: 0;
+    white-space: nowrap;
+}
+
+.title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    text-align: center;
+
+    @include w($sm) {
+        font-size: 26px;
+    }
+}
+
+ol.counter {
+    list-style-type: none;
+    counter-reset: item;
+
+    li {
+        position: relative;
+        padding: 0 0 0 45px;
+
+        &::before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            counter-increment: item;
+            border: 1px solid #4274bb;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 26px;
+            text-align: center;
+            color: #818181;
+        }
+    }
+}
+
+.ibg {
+    position: relative;
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+
+    video,
+    iframe,
+    object,
+    embed {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.videobg {
+
+    video,
+    iframe,
+    object,
+    embed {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        z-index: -100;
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        background-size: cover;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}

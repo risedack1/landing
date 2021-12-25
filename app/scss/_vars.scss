@@ -1,0 +1,31 @@
+// font-family: 'DMSans', sans-serif;
+// font-family: 'Poppins', sans-serif;
+// font-family: 'Rubik', sans-serif;
+
+// screen size
+
+$xsm: 380px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1300px;
+
+// colors
+
+$gray: #55524e;
+$grayLight: #a7a6a4;
+
+// container size
+
+$container: 1210;
+$max-container: 1800;
+
+// fansybox error
+
+@function max($numbers...) {
+    @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+    @return m#{i}n(#{$numbers});
+}
